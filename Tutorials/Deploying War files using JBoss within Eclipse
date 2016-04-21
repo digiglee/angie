@@ -1,0 +1,16 @@
+I had a problem deploying to JBoss AS 7.1 within Mars.1 Release (4.5.1). So, I noticed that "deploy-name" in the 
+org.eclipse.wst.common.component file was different (and same to the other war file) from the "value" name. I changed it to be the same 
+and now I can deploy both war files within Eclipse. 
+
+In the past I was deploying 1 war(WEB) file within Eclipse adn the other one (Webservice) inside: C:\jboss-as-7.1.1.Final\jboss-as-7.1.1.Final\standalone\deployments
+
+<?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
+    <wb-module deploy-name="Webservice">
+        <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
+        <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
+        <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/resources"/>
+        <property name="java-output-path" value="/JASCI/target/classes"/>
+        <property name="context-root" value="Webservice"/>
+    </wb-module>
+</project-modules>
